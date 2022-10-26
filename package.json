@@ -1,0 +1,15 @@
+{
+  "name": "event-emitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-Zilmar:GabrielZilmar/event-emitter.git"
+  },
+  "author": "Gabriel Zilmar",
+  "license": "ISC"
+}
