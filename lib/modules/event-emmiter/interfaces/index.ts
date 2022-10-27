@@ -1,5 +1,7 @@
 export type EventType = {
-  [key: string]: ListenerType[];
+  [key: EventName]: ListenerType[];
 };
+
+export type EventName = string;
 
 export type ListenerType = <T>(payload: T) => void;

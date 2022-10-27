@@ -1,35 +1,36 @@
-import { EventType, ListenerType } from "./interfaces";
+import "reflect-metadata";
+import { EventName, EventType, ListenerType } from "./interfaces";
 
 export default class EventEmitter {
   public events: EventType = {};
 
-  constructor(eventNames: string[]) {
+  constructor(eventNames: EventName[]) {
     this.initialize(eventNames);
   }
 
-  public emit<T>(event: string, payload: T): void {
+  public emit<T>(event: EventName, payload: T): void {
     this.preventInexistentEvent(event);
 
     this.events[event].map((listener) => listener(payload));
   }
 
-  public on(event: string, listener: ListenerType): void {
+  public on(event: EventName, listener: ListenerType): void {
     this.preventInexistentEvent(event);
 
     this.events[event].push(listener);
   }
 
-  private eventExist(event: string): boolean {
+  private eventExist(event: EventName): boolean {
     return !!this.events[event];
   }
 
-  private preventInexistentEvent(event: string): void {
+  private preventInexistentEvent(event: EventName): void {
     if (this.eventExist(event)) {
       throw new Error("Event does't exist in events list.");
     }
   }
 
-  private initialize(eventNames: string[]): void {
+  private initialize(eventNames: EventName[]): void {
     eventNames.map((eventName) => (this.events[eventName] ??= []));
   }
 }
