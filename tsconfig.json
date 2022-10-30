@@ -9,6 +9,7 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["reflect-metadata", "jest"]
   }
 }
