@@ -8,10 +8,10 @@ export default class EventEmitter {
     this.initialize(eventNames);
   }
 
-  public emit<T>(event: EventName, payload: T): void {
+  public async emit<T>(event: EventName, payload: T): Promise<void> {
     this.preventInexistentEvent(event);
 
-    this.events[event].map((listener) => listener(payload));
+    await Promise.all(this.events[event].map((listener) => listener(payload)));
   }
 
   public on(event: EventName, listener: ListenerType): void {
@@ -25,7 +25,7 @@ export default class EventEmitter {
   }
 
   private preventInexistentEvent(event: EventName): void {
-    if (this.eventExist(event)) {
+    if (!this.eventExist(event)) {
       throw new Error("Event does't exist in events list.");
     }
   }
