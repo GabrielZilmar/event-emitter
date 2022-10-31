@@ -30,7 +30,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+          scope: "@gabrielzilmar"
       - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_PKG_TOKEN}}
+          PKG_TOKEN: ${{secrets.GITHUB_TOKEN}}
