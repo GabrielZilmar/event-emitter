@@ -14,7 +14,7 @@
   "author": "Gabriel Zilmar",
   "license": "ISC",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@GabrielZilmar",
+    "registry": "https://npm.pkg.github.com/",
     "access": "public"
   },
   "devDependencies": {
