@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-          scope: "@GabrielZilmar"
+          scope: "@gabrielzilmar"
       - name: Build - NPM Install
         run: npm install
       - name: Build - NPM Build
