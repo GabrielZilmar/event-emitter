@@ -1,12 +1,11 @@
 {
   "name": "@GabrielZilmar/event-emitter",
-  "version": "0.0.11",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "npm install && tsc",
-    "test": "NODE_ENV=test jest --runInBand --forceExit",
-    "publish": "npm install && npm run build && npm publish"
+    "test": "NODE_ENV=test jest --runInBand --forceExit"
   },
   "repository": {
     "type": "git",
