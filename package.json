@@ -1,5 +1,5 @@
 {
-  "name": "@GabrielZilmar/event-emitter",
+  "name": "@gabrielzilmar/event-emitter",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "author": "Gabriel Zilmar",
   "license": "ISC",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+    "@gabrielzilmar/registry": "https://npm.pkg.github.com/",
     "access": "public"
   },
   "devDependencies": {
