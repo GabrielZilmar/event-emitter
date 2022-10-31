@@ -1,37 +1,27 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Node.js Package
+name: Publish to Github Packages
 
 on:
   release:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-publish:
+    name: Build and Publish
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Build - Git Checkout
+        uses: actions/checkout@v2
+      - name: Build - Setup Node
+        uses: actions/setup-node@v1
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
           scope: "@GabrielZilmar"
-      - run: npm ci
-      - run: npm publish
+      - name: Build - NPM Install
+        run: npm install
+      - name: Build - NPM Build
+        run: npm run build
+      - name: Deploy - NPM Publish
+        run: npm publish
         env:
-          PKG_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PKG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
