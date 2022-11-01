@@ -2,9 +2,14 @@
   "name": "@gabrielzilmar/event-emitter",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "build": "npm install && tsc",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm install && tsc",
     "test": "NODE_ENV=test jest --runInBand --forceExit"
   },
   "repository": {
