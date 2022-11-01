@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { describe, expect, it } from "@jest/globals";
 import { EventEmitter } from "../lib/modules/event-emitter";
 import { TriggersOn } from "../lib/modules/event-emitter/decorators/triggers-on";
