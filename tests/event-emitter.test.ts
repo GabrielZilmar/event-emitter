@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
-import { EventEmitter } from "../lib/modules/event-emmiter";
-import { TriggersOn } from "../lib/modules/event-emmiter/decoratos/triggers-on";
+import { EventEmitter } from "../lib/modules/event-emitter";
+import { TriggersOn } from "../lib/modules/event-emitter/decorators/triggers-on";
 
 describe("Event Emitter", () => {
   const eventNames = ["event1", "event2"];
