@@ -26,7 +26,7 @@ export default class EventEmitter {
 
   private preventInexistentEvent(event: EventName): void {
     if (!this.eventExist(event)) {
-      throw new Error("Event does't exist in events list.");
+      throw new Error(`The event ${event}, does't exist in events list.`);
     }
   }
 
